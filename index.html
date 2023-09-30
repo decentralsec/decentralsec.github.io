@@ -101,7 +101,7 @@
 								</div>
 								<div class="inner columns divided">
 									<div class="span-3-25">
-										<form method="post" action="https://api.staticforms.xyz/submit">
+										<form class="contact-form" method="post" action="https://api.staticforms.xyz/submit">
 											<input type="hidden" name="accessKey" value="bccd6229-4b49-405f-a058-93537ba571f6"> <!-- Required -->
 											<div class="fields">
 												<div class="field half">
@@ -121,6 +121,9 @@
 												<li><input type="submit" value="Send Message" class="button primary" /></li>
 											</ul>
 										</form>
+										<div id="thank-you-message" style="display: none;">
+											Thank you for contacting us!
+										</div>
 									</div>
 									<div class="span-1-5">
 										<ul class="contact-icons color1">
@@ -131,6 +134,21 @@
 									</div>
 								</div>
 							</section>
+							<script>
+								document.querySelector('.contact-form').addEventListener('submit', function(event) {
+									event.preventDefault(); // Prevent the form from submitting normally
+								
+									// Here you can add code to send the form data to the API if needed.
+									// For example, you can use the Fetch API to send a POST request to the API endpoint.
+								
+									// After successful form submission (for demo purposes, assume it's always successful):
+									// Hide the form
+									document.querySelector('.contact-form').style.display = 'none';
+									// Display the thank you message
+									document.getElementById('thank-you-message').style.display = 'block';
+								});
+								</script>
+								
 
 						<!-- Panel -->
 							<section class="panel color2-alt">
