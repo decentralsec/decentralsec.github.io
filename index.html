@@ -135,35 +135,51 @@
 								</div>
 							</section>
 							<script>
-								document.querySelector('.contact-form').addEventListener('submit', function(event) {
-    								event.preventDefault(); // Prevent the form from submitting normally
+							document.querySelector('.contact-form').addEventListener('submit', function(event) {
+								event.preventDefault(); // Prevent the form from submitting normally
 
-								    // Get form data
-    								const formData = new FormData(document.querySelector('.contact-form'));
+								// Get form data
+								const formData = new FormData(document.querySelector('.contact-form'));
 
-								    // Send form data to the API using Fetch API
-    								fetch('https://api.staticforms.xyz/submit', {
-        								method: 'POST',
-        								body: formData
-    								})
-    								.then(response => response.json())
-    								.then(data => {
-							        // Check if the email was sent successfully
-        								if (data.success) {
-            							// Hide the form
-            							document.querySelector('.contact-form').style.display = 'none';
-            							// Display the thank you message
-            							document.getElementById('thank-you-message').style.display = 'block';
-        							} else {
-            						// Handle the case when email sending fails, e.g., display an error message
-            							console.error('Email sending failed');
-        							}
-    							})
-    							.catch(error => {
-        						// Handle errors, e.g., display an error message
-        							console.error('Error:', error);
-    								});
-								});
+								// Create a new XMLHttpRequest object
+								const xhr = new XMLHttpRequest();
+								
+								// Configure the request
+								xhr.open('POST', 'https://api.staticforms.xyz/submit', true);
+								xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+								
+								// Define what happens on successful data submission
+								xhr.onload = function() {
+									if (xhr.status >= 200 && xhr.status < 300) {
+										// Successful request
+										const response = JSON.parse(xhr.responseText);
+										if (response.success) {
+											// Email sent successfully
+											// Hide the form
+											document.querySelector('.contact-form').style.display = 'none';
+											// Display the thank you message
+											document.getElementById('thank-you-message').style.display = 'block';
+										} else {
+											// Handle the case when email sending fails, e.g., display an error message
+											console.error('Email sending failed');
+										}
+									} else {
+										// Request failed
+										console.error('Request failed with status:', xhr.status);
+									}
+								};
+								
+								// Handle network errors
+								xhr.onerror = function() {
+									console.error('Request failed');
+								};
+								
+								// Convert form data to URL-encoded format
+								const urlEncodedData = new URLSearchParams(formData).toString();
+								
+								// Send the request with the form data
+								xhr.send(urlEncodedData);
+							});
 								</script>
 								
 
