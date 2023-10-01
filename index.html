@@ -136,12 +136,33 @@
 							</section>
 							<script>
 								document.querySelector('.contact-form').addEventListener('submit', function(event) {
-									//event.preventDefault(); // Prevent the form from submitting normally								
-									// After successful form submission (for demo purposes, assume it's always successful):
-									// Hide the form
-									document.querySelector('.contact-form').style.display = 'none';
-									// Display the thank you message
-									document.getElementById('thank-you-message').style.display = 'block';
+    								event.preventDefault(); // Prevent the form from submitting normally
+
+								    // Get form data
+    								const formData = new FormData(document.querySelector('.contact-form'));
+
+								    // Send form data to the API using Fetch API
+    								fetch('https://api.staticforms.xyz/submit', {
+        								method: 'POST',
+        								body: formData
+    								})
+    								.then(response => response.json())
+    								.then(data => {
+							        // Check if the email was sent successfully
+        								if (data.success) {
+            							// Hide the form
+            							document.querySelector('.contact-form').style.display = 'none';
+            							// Display the thank you message
+            							document.getElementById('thank-you-message').style.display = 'block';
+        							} else {
+            						// Handle the case when email sending fails, e.g., display an error message
+            							console.error('Email sending failed');
+        							}
+    							})
+    							.catch(error => {
+        						// Handle errors, e.g., display an error message
+        							console.error('Error:', error);
+    								});
 								});
 								</script>
 								
