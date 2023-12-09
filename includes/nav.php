@@ -10,7 +10,7 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="home" id="navbardrop">Home</a>
+                        <a class="nav-link" href="index" id="navbardrop">Home</a>
                      </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about">About Us</a>
