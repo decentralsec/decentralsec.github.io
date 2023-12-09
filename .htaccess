@@ -1,24 +1,24 @@
 Options -Indexes
 RewriteEngine On
 
-RewriteRule ^home$ index.php [L]
+RewriteRule ^home$ index.html [L]
 
-RewriteRule ^about$ about.php [L]
+RewriteRule ^about$ about.html [L]
 
-RewriteRule ^contact$ contact.php [L]
+RewriteRule ^contact$ contact.html [L]
 
-RewriteRule ^services$ services.php [L]
+RewriteRule ^services$ services.html [L]
  
-RewriteRule ^documents$ mission.php [L]
+RewriteRule ^documents$ mission.html [L]
 
-RewriteRule ^security_consulting$ security_consulting.php [L]
+RewriteRule ^security_consulting$ security_consulting.html [L]
 
-RewriteRule ^penetration_test$ penetration_test.php [L]
+RewriteRule ^penetration_test$ penetration_test.html [L]
 
-RewriteRule ^smart_contract$ smart_contract.php [L]
+RewriteRule ^smart_contract$ smart_contract.html [L]
 
-RewriteRule ^audit_samples$ audit_samples.php [L]
+RewriteRule ^audit_samples$ audit_samples.html [L]
 
-RewriteRule ^litepaper$ litepaper.php [L]
+RewriteRule ^litepaper$ litepaper.html [L]
 
  
