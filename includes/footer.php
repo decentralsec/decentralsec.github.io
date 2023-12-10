@@ -8,7 +8,7 @@
                             <!-- Copywrite -->
                             <div class="copywrite_text fadeInUp" data-wow-delay="0.2s">
                                 <div class="footer-logo">
-                                    <a href="home"><img draggable="false" src="img/core-img/logo.jpeg" alt="logo"> DecentralSec  </a>
+                                    <a href="index"><img draggable="false" src="img/core-img/logo.jpeg" alt="logo"> DecentralSec  </a>
                                 </div>
                                 <p>Welcome to DecentralSec - where innovation meets security in the Web3 universe. We are not just another agency; we are the guardians of your project's safety.</p>
                             </div>

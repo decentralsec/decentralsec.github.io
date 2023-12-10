@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-white fixed-top" id="banner">
         <div class="container">
             <!-- Brand -->
-            <a class="navbar-brand" href="home"><span><img draggable="false" src="img/core-img/logo.jpeg" alt="logo"></span> DecentralSec </a>
+            <a class="navbar-brand" href="index"><span><img draggable="false" src="img/core-img/logo.jpeg" alt="logo"></span> DecentralSec </a>
              <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
