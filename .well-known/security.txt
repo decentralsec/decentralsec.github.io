@@ -1,0 +1,4 @@
+Contact: mailto:security@decentralsec.io
+Expires: 2024-12-31T22:59:00.000Z
+Preferred-Languages: en
+Canonical: https://decentralsec.io/.well-known/security.txt
