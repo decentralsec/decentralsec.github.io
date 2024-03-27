@@ -1,0 +1,16 @@
+.home_banner{
+    height: 450px;
+    width:100%;
+    background-image: url(../images/cyber-security3.svg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+}
+
+.fuel-features:before, .fuel-features:after{
+    display: none !important;
+}
+
+.lite-paper-content > p{
+    text-align: justify;
+}

@@ -1,26 +1,4 @@
-Options -Indexes
-RewriteEngine On
-
-RewriteRule ^home$ index.html [L]
-
-RewriteRule ^index$ index.html [L]
-
-RewriteRule ^about$ about.html [L]
-
-RewriteRule ^contact$ contact.html [L]
-
-RewriteRule ^services$ services.html [L]
- 
-RewriteRule ^documents$ mission.html [L]
-
-RewriteRule ^security_consulting$ security_consulting.html [L]
-
-RewriteRule ^penetration_test$ penetration_test.html [L]
-
-RewriteRule ^smart_contract$ smart_contract.html [L]
-
-RewriteRule ^audit_samples$ audit_samples.html [L]
-
-RewriteRule ^litepaper$ litepaper.html [L]
-
- 
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L] 
